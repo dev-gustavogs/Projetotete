@@ -9,9 +9,19 @@ const SecundaryPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMostrarTexto(true)
-    }, 3000) // 3 segundos
+    }, 2000) // 3 segundos
 
     return () => clearTimeout(timer)
+  }, [])
+
+    const [corAtiva, setCorAtiva] = useState(false)
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setCorAtiva((corAnterior) => !corAnterior) // inverte o valor a cada vez
+    }, 1000) // troca a cada 2 segundos
+
+    return () => clearInterval(intervalo) // limpa o intervalo quando o componente desmonta
   }, [])
 
   return (
@@ -60,6 +70,12 @@ const SecundaryPage = () => {
               </BotaoFujao>
              </div>
           )}
+        </div>
+        <div className="flex flex-col items-center justify-center mt-10">
+                <Link to="/quarta" className={`text-xl flex flex-col p-10 rounded-lg items-center justify-center transition-colors duration-[1000ms] ${
+                  corAtiva ? 'bg-blue-500' : 'bg-blue-700'}`}>
+                  Next
+                </Link>
         </div>
 
       </div>

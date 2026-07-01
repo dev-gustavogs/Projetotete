@@ -8,7 +8,7 @@ const MainPage = () => {
   useEffect(() => {
     const intervalo = setInterval(() => {
       setCorAtiva((corAnterior) => !corAnterior) // inverte o valor a cada vez
-    }, 2000) // troca a cada 2 segundos
+    }, 1000) // troca a cada 2 segundos
 
     return () => clearInterval(intervalo) // limpa o intervalo quando o componente desmonta
   }, [])
@@ -22,7 +22,7 @@ const MainPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center mt-10">
-        <Link to="/secundaria" className={`text-xl flex flex-col p-10 rounded-lg items-center justify-center transition-colors duration-[2000ms] ${
+        <Link to="/secundaria" className={`text-xl flex flex-col p-10 rounded-lg items-center justify-center transition-colors duration-[1000ms] ${
           corAtiva ? 'bg-pink-500' : 'bg-pink-700'}`}>
           Próxima página bemzin
         </Link>
