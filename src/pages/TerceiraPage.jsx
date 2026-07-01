@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import '/src/index.css'
 import BotaoFujao from '../components/BotaoFujao'
 import { useState, useEffect } from 'react'
+import foto6 from '../assets/tete6.jpeg'
+import foto4 from '../assets/tete4.jpeg'
 
 const SecundaryPage = () => {
     const [mostrarTexto, setMostrarTexto] = useState(false)
@@ -9,7 +11,7 @@ const SecundaryPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMostrarTexto(true)
-    }, 2000) // 3 segundos
+    }, 2000) // 2 segundos
 
     return () => clearTimeout(timer)
   }, [])
@@ -30,13 +32,13 @@ const SecundaryPage = () => {
         <img
         width="400"
         height="5000"
-        src="src/assets/tete6.jpeg"
+        src={foto6}
         alt="Description"
         className="absolute top-4 left-4"
       />
       <img
         width="330"
-        src="src/assets/tete4.jpeg"
+        src={foto4}
         alt="Description"
         className="absolute top-4 right-4"
       />
@@ -52,18 +54,22 @@ const SecundaryPage = () => {
                 mostrarTexto ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <Link
+              <a
+              href="https://www.youtube.com/watch?v=UOs3crIFUXE"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center bg-yellow-600 px-6 py-3 rounded-lg text-white font-bold"
-                to="https://www.youtube.com/watch?v=UOs3crIFUXE"
               >
                 Talvez
-              </Link>
-              <Link
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=HNI7yZvwqAQ"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center bg-green-600 px-6 py-3 rounded-lg text-white font-bold"
-                to="https://www.youtube.com/watch?v=HNI7yZvwqAQ"
               >
                 Não
-              </Link>
+              </a>
 
               <BotaoFujao className="flex items-center justify-center bg-red-700 px-6 py-3 rounded-lg text-white font-bold">
                 É lógico amor!

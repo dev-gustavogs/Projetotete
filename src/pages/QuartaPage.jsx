@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "/src/index.css";
 import { useState, useEffect } from "react";
 
@@ -8,14 +7,14 @@ const QuartaPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMostrarTexto(true);
-    }, 2000); // 3 segundos
+    }, 2000); // 2 segundos
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <div className="min-h-screen bg-[url('/src/assets/pp2.jpg')] bg-cover bg-center bg-no-repeat">
+      <div className="min-h-screen bg-[url('/pp2.jpg')] bg-cover bg-center bg-no-repeat">
         <div className="min-h-screen flex flex-col items-center justify-center">
           {mostrarTexto && (
             <div
@@ -25,12 +24,13 @@ const QuartaPage = () => {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              <Link
+              <a href="https://www.youtube.com/shorts/cdgmo-BjsiU"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center bg-green-600 px-15 py-10 rounded-lg text-white font-bold"
-                to="https://www.youtube.com/shorts/cdgmo-BjsiU"
               >
-                VAMOS
-              </Link>
+                VAMOS!
+              </a>
             </div>
           )}
         </div>
